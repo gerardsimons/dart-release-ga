@@ -24,9 +24,9 @@ jobs:
     - name: Install dependencies
       run: dart pub get
     - name: Compile native
-      run: mkdir build && dart compile exe bin/hello_world.dart -o build/${{ matrix.output-name }}
+      run: mkdir binaries && dart compile exe bin/hello_world.dart -o binaries/${{ matrix.output-name }}
     - uses: actions/upload-artifact@v1
       with:
         name: native-executables
-        path: build
+        path: binaries
 
