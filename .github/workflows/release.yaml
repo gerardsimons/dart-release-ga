@@ -10,11 +10,11 @@ jobs:
         os: [ubuntu-latest, windows-latest, macOS-latest]
         include:
           - os: ubuntu-latest
-            output-name: dartle-linux
+            output-name: hello_world_linux
           - os: macOS-latest
-            output-name: dartle-mac
+            output-name: hello_world_darwin
           - os: windows-latest
-            output-name: dartle-windows.exe
+            output-name: hello_world_win.exe
 
     steps:
     - uses: DanTup/gh-actions/setup-dart@master
