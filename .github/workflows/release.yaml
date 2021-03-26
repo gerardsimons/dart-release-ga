@@ -30,3 +30,13 @@ jobs:
         name: native-executables
         path: binaries
 
+    - name: Upload binaries to release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: binaries
+        asset_name: ${{ matrix.output-name }}
+        tag: ${{ github.ref }}
+        overwrite: true
+        body: "This is my release text"
+
