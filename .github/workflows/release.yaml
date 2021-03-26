@@ -22,13 +22,11 @@ jobs:
     - uses: DanTup/gh-actions/setup-dart@master
     - uses: actions/checkout@v1
     - name: Install dependencies
-      run: pub get
-    - name: Run tests
-      run: pub run test
+      run: dart pub get
     - name: Compile native
-      run: mkdir binaries && dart2native bin/dartle.dart -o binaries/${{ matrix.output-name }}
+      run: mkdir build && dart compile exe bin/hello_world.dart -o build/${{ matrix.output-name }}
     - uses: actions/upload-artifact@v1
       with:
         name: native-executables
-        path: binaries
+        path: build
 
